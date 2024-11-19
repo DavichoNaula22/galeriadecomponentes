@@ -9,10 +9,8 @@
     <app-secundario-button (buttonClicked)="onSecundarioButtonClick()"></app-secundario-button>
     <app-form (formValuesChange)="onFormValuesChange($event)"></app-form>
 
-    <app-form-view [formData]="formData"></app-form-view>
-    
     <!-- Mostrar el FormView solo si formViewVisible es true -->
-    <div *ngIf="formViewVisible" [ngStyle]="{'position': 'absolute', 'top': formViewPosition.top, 'left': formViewPosition.left, 'background-color': formViewBackgroundColor}">
-        <app-form-view [backgroundColor]="formViewBackgroundColor"></app-form-view>
+    <div  [ngStyle]="{'position': 'absolute', 'top': formViewPosition.top, 'left': formViewPosition.left, 'background-color': formViewBackgroundColor}">
+        <app-form-view [backgroundColor]="formViewBackgroundColor" [formData]="formData"></app-form-view>
     </div>
 </div>

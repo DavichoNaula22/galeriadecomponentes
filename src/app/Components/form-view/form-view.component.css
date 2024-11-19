@@ -1,0 +1,41 @@
+.form-view-container {
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    max-width: 350px; /* Ancho máximo ajustado */
+    margin: 20px auto; /* Centrar el contenedor */
+}
+
+h1 {
+    color: #333333; /* Color del título */
+    font-size: 1.8em; /* Tamaño de fuente más grande para el título */
+    margin-bottom: 15px; /* Espaciado inferior */
+    text-align: center; /* Centrar el título */
+}
+
+p {
+    font-size: 1.2em; /* Tamaño de fuente para los párrafos */
+    color: #555555; /* Color del texto */
+    margin: 10px 0; /* Espaciado superior e inferior */
+}
+
+.form-view-container {
+    background-color: #ffffff; /* Fondo blanco por defecto */
+    color: #333333; /* Color del texto */
+    /* ... otros estilos existentes ... */
+}
+
+/* Estilos para el modo oscuro */
+body.dark-theme .form-view-container {
+    background-color: #2c2c2c; /* Fondo oscuro */
+    color: #ffffff; /* Texto blanco */
+}
+
+body.dark-theme .form-view-title {
+    color: #ffffff; /* Color del título en modo oscuro */
+}
+
+body.dark-theme .form-view-item {
+    color: #cccccc; /* Color del texto en modo oscuro */
+}

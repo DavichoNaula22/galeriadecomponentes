@@ -3,7 +3,6 @@ import { Component, EventEmitter, Output } from '@angular/core';
 @Component({
   selector: 'app-mode-button',
   standalone: true,
-  imports: [],
   templateUrl: './mode-button.component.html',
   styleUrls: ['./mode-button.component.css']
 })

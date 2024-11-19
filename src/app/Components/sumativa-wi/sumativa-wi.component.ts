@@ -22,45 +22,74 @@ import { CommonModule } from '@angular/common';
     SecundarioButtonComponent
   ],
   templateUrl: './sumativa-wi.component.html',
-  styleUrls: ['./sumativa-wi.component.css'] // Cambié "styleUrl" a "styleUrls"
+  styleUrls: ['./sumativa-wi.component.css']
 })
 export class SumativaWiComponent {
-  formViewVisible = true; // Controlar la visibilidad del FormView
   formViewPosition = { top: '0px', left: '0px' }; // Posición inicial del FormView
   formViewBackgroundColor = 'white'; // Color de fondo inicial
   isDarkMode = false; // Estado del modo oscuro
   formData = { password: '', email: '', text: '' }; // Datos del formulario
 
+  // Arreglos de colores para los botones
+  primarioColors = ['#FF5733', '#33FF57', '#3357FF', '#F1C40F', '#8E44AD', '#E74C3C'];
+  secundarioColors = ['#3498DB', '#2ECC71', '#9B59B6', '#E67E22', '#E74C3C', '#34495E'];
+
+  // Índices para los colores actuales
+  primarioColorIndex = 0;
+  secundarioColorIndex = 0;
+
   // Método para manejar clic en el botón Primario
   onPrimarioButtonClick() {
-    this.formViewVisible = true; // Cambiar el estado para mostrar el FormView
+    this.changeFormViewBackgroundColor(this.primarioColors[this.primarioColorIndex]); // Cambiar color
+    this.primarioColorIndex = (this.primarioColorIndex + 1) % this.primarioColors.length; // Cambiar al siguiente color
   }
 
   // Método para manejar clic en el botón Secundario
   onSecundarioButtonClick() {
-    this.formViewVisible = false; // Cambiar el estado para ocultar el FormView
+    this.changeFormViewBackgroundColor(this.secundarioColors[this.secundarioColorIndex]); // Cambiar color
+    this.secundarioColorIndex = (this.secundarioColorIndex + 1) % this.secundarioColors.length; // Cambiar al siguiente color
   }
 
   // Método para manejar clic en el botón Aceptar
   onAceptarButtonClick() {
-    alert('Aceptado'); // Mostrar ventana emergente
-    this.moveFormView(); // Mover el FormView
-    this.changeFormViewBackgroundColor(); // Cambiar el color de fondo
+    this.moveFormViewToCenter('green'); // Mover y cambiar color a verde
+    setTimeout(() => {
+      this.moveFormViewBack(); // Volver a la posición original
+      this.changeFormViewBackgroundColor('white'); // Restaurar color original
+    }, 2000);
   }
 
   // Método para manejar clic en el botón Cancelar
   onCancelarButtonClick() {
-    alert('Cancelado'); // Mostrar ventana emergente
-    this.changeFormViewBackgroundColor('red'); // Cambiar el color de fondo a rojo
-
+    this.moveFormViewToCenter('red'); // Mover y cambiar color a rojo
     setTimeout(() => {
-      this.formViewBackgroundColor = 'white'; // Volver al color original después de 3 segundos
-    }, 3000);
-
-    this.moveFormViewBack(); // Mover el FormView a su posición original
+      this.moveFormViewBack(); // Volver a la posición original
+      this.changeFormViewBackgroundColor('white'); // Restaurar color original
+    }, 2000);
   }
 
-  // Método para manejar el cambio de modo
+  // Método para mover el FormView al centro
+  moveFormViewToCenter(color: string) {
+    this.formViewPosition = { top: '50%', left: '50%' }; // Posición centrada
+    this.changeFormViewBackgroundColor(color); // Cambiar color de fondo
+  }
+
+  // Método para mover el Form View de vuelta a su posición original
+  moveFormViewBack() {
+    this.formViewPosition = { top: '0px', left: '0px' }; // Posición original
+  }
+
+  // Método para cambiar el color de fondo del FormView
+  changeFormViewBackgroundColor(color: string) {
+    this.formViewBackgroundColor = color; // Cambiar el color de fondo
+  }
+
+  // Método para manejar los cambios en los valores del formulario
+  onFormValuesChange(values: { password: string; email: string; text: string }) {
+    console.log('Form Values Changed:', values);
+    this.formData = values; // Actualizar formData con los nuevos valores
+  }
+
   onModeChanged(isDarkMode: boolean) {
     this.isDarkMode = isDarkMode; // Actualizar el estado del modo oscuro
     this.updateTheme(); // Cambiar el tema de la aplicación
@@ -74,26 +103,7 @@ export class SumativaWiComponent {
     } else {
       body.classList.remove('dark-theme'); // Remover clase para el modo claro
     }
-  }
+    }
 
-  // Método para mover el FormView
-  moveFormView() {
-    this.formViewPosition = { top: '50px', left: '100px' }; // Nueva posición
-  }
 
-  // Método para mover el FormView de vuelta a su posición original
-  moveFormViewBack() {
-    this.formViewPosition = { top: '0px', left: '0px' }; // Posición original
-  }
-
-  // Método para cambiar el color de fondo del FormView
-  changeFormViewBackgroundColor(color: string = 'green') {
-    this.formViewBackgroundColor = color; // Cambiar el color de fondo
-  }
-
-  // Método para manejar los cambios en los valores del formulario
-  onFormValuesChange(values: { password: string; email: string; text: string }) {
-    console.log('Form Values Changed:', values);
-    this.formData = values; // Actualizar formData con los nuevos valores
-  }
 }

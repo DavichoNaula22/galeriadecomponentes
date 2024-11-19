@@ -1,10 +1,58 @@
-input {
+form {
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    width: 90%; /* Ancho del formulario */
+    margin: 20px auto; /* Centrar el formulario */
+    transition: transform 0.3s ease;
+}
+
+form:hover {
+    transform: scale(1.02); /* Efecto de zoom al pasar el mouse */
+}
+
+label {
+    font-size: 1.2em;
+    color: #ff5733; /* Color vibrante para las etiquetas */
+    margin-bottom: 5px;
+    display: block; /* Asegura que las etiquetas ocupen todo el ancho */
+}
+
+input, textarea {
+    width: calc(100% - 22px); /* Ocupa todo el ancho disponible menos el padding */
+    padding: 10px;
     margin: 10px 0;
-    padding: 8px;
-    width: 100%;
-    max-width: 300px; /* Ajustar el ancho máximo si es necesario */
-  }
-  
-  small {
-    color: red; /* Color para mensajes de error */
-  }
+    border: 2px solid #ffcc00; /* Borde dorado */
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #ff5733; /* Cambiar el color del borde al enfocar */
+    outline: none; /* Sin contorno */
+}
+
+textarea {
+    resize: vertical; /* Permitir solo el cambio de tamaño vertical */
+    min-height: 100px; /* Altura mínima para el textarea */
+}
+
+button {
+    background-color: #ff5733; /* Color de fondo vibrante */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    background-color: #c0392b; /* Color más oscuro al pasar el mouse */
+    transform: translateY(-2px); /* Efecto de elevación al pasar el mouse */
+}

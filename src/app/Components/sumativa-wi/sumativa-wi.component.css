@@ -1,5 +1,6 @@
 /* Estilo general de la página */
-body {
+body 
+{
     background-color: #121212; /* Fondo oscuro suave */
     font-family: 'Roboto', sans-serif; /* Tipografía moderna y limpia */
     color: #fafafa; /* Texto claro para buen contraste */
@@ -14,22 +15,30 @@ body {
 
 /* Contenedor principal */
 .sumativa-container {
-    max-width: 90%; /* Ajusta el ancho máximo del contenedor */
-    width: 100%; /* Inicialmente ocupa todo el ancho disponible */
+    max-width: 960px; /* Ancho máximo para pantallas grandes */
+    width: 90%; /* Ocupa el 90% del ancho del viewport */
     margin: 0 auto; /* Centra el contenedor horizontalmente */
     padding: 20px; /* Reduce el padding para pantallas más pequeñas */
-    background: linear-gradient(145deg, rgba(24, 24, 24, 0.9), rgba(0, 255, 255, 0.1)); /* Degradado suave */
+    background: linear-gradient(145deg, rgba(0, 0, 0, 0.8), rgba(255, 165, 0, 0.5)); /* Degradado de naranja y negro */
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra suave */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); /* Sombra suave */
     text-align: center;
     backdrop-filter: blur(10px); /* Efecto de desenfoque para dar profundidad */
     animation: slideIn 1.2s ease-out; /* Animación de deslizamiento */
 }
 
+
+
+
 /* Ajustes para pantallas más pequeñas */
 @media (max-width: 768px) {
     .sumativa-container {
-        padding: 15px; /* Reduce aún más el padding */
+        width: 95%; /* Aumenta el ancho para ocupar más espacio en pantallas pequeñas */
+        padding: 15px; /* Reduce el padding para pantallas pequeñas */
+    }
+
+    .title {
+        font-size: 2rem; /* Reduce el tamaño del título */
     }
 }
 
@@ -49,19 +58,12 @@ body {
 .title {
     font-size: 2.5rem; /* Usa unidades rem para escalabilidad */
     margin-bottom: 1rem; /* Usa unidades rem para escalabilidad */
-    color: #00bcd4; /* Azul futurista */
+    color: #ffcc00; /* Color amarillo vibrante */
     letter-spacing: 1px;
     text-transform: uppercase; /* Mayúsculas */
     font-weight: 700;
-    text-shadow: 0 0 10px rgba(0, 188, 212, 0.7), 0 0 20px rgba(0, 188, 212, 0.5); /* Sombra sutil */
+    text-shadow: 0 0 10px rgba(255, 204, 0, 0.7), 0 0 20px rgba(255, 204, 0, 0.5); /* Sombra sutil */
     animation: fadeInText 1.5s ease-out; /* Animación de entrada */
-}
-
-/* Ajustes para pantallas más pequeñas */
-@media (max-width: 768px) {
-    .title {
-        font-size: 2rem; /* Reduce el tamaño del título */
-    }
 }
 
 /* Animación de desvanecimiento del título */
@@ -87,7 +89,7 @@ body {
 /* Ajustes para pantallas más pequeñas */
 @media (max-width: 768px) {
     .description {
-        font-size: 1rem; /* Reduce el tamaño de la descripción */
+        font-size: 1.1rem; /* Reduce el tamaño de la descripción */
     }
 }
 
@@ -101,7 +103,6 @@ body {
     }
 }
 
-
 body::before {
     content: '';
     position: absolute;
@@ -109,7 +110,7 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('https://www.transparenttextures.com/patterns/space.png');
+    background: url('https://www.transparenttextures.com/patterns/ space.png');
     animation: starsMove 30s linear infinite;
     pointer-events: none;
 }
@@ -124,4 +125,35 @@ body::before {
     }
 }
 
+/* Estilos para los botones */
+.button {
+    background-color: #ff5722; /* Color de fondo naranja vibrante */
+    border: none; /* Sin borde */
+    color: white; /* Color del texto */
+    padding: 12px 24px; /* Espaciado interno, ajustado para pantallas más pequeñas */
+    text-align: center; /* Alineación del texto */
+    text-decoration: none; /* Sin subrayado */
+    display: inline-block; /* Para que se comporten como botones */
+    font-size: 1rem; /* Tamaño de la fuente, usando rem para escalabilidad */
+    margin: 10px; /* Margen, usando un solo valor para simplificar */
+    cursor: pointer; /* Cursor tipo mano */
+    border-radius: 8px; /* Bordes redondeados */
+    transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+}
 
+.button:hover {
+    background-color: #e64a19; /* Color de fondo al pasar el mouse */
+    transform: scale(1.05); /* Aumentar ligeramente el tamaño */
+}
+
+.button:active {
+    transform: scale(0.95); /* Efecto de pulsar */
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .button {
+        padding: 10px 20px; /* Reduce el padding de los botones */
+    }
+}

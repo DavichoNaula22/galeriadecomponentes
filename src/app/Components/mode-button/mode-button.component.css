@@ -1,0 +1,21 @@
+button {
+    background-color: #3498db; /* Color azul claro para representar el cielo */
+    color: #ffffff; /* Texto blanco */
+    border: none;
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 12px 24px; /* Espaciado interno */
+    font-size: 1.5em; /* Tamaño de fuente más grande */
+    cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Sombra para dar profundidad */
+}
+
+button:hover {
+    background-color: #2980b9; /* Color más oscuro al pasar el mouse */
+    transform: translateY(-2px); /* Efecto de elevación al pasar el mouse */
+}
+
+button:active {
+    transform: translateY(1px); /* Efecto de hundimiento al hacer clic */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Sombra más pequeña al hacer clic */
+}
