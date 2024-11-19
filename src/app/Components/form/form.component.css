@@ -1,0 +1,10 @@
+input {
+    margin: 10px 0;
+    padding: 8px;
+    width: 100%;
+    max-width: 300px; /* Ajustar el ancho máximo si es necesario */
+  }
+  
+  small {
+    color: red; /* Color para mensajes de error */
+  }

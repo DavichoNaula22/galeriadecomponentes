@@ -1,0 +1,5 @@
+/* You can add global styles to this file, and also import other style files */
+.dark-theme {
+    background-color: #121212; /* Color de fondo oscuro */
+    color: blueviolet; /* Color de texto claro */
+}

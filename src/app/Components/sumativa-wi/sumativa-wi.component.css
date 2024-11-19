@@ -1,0 +1,127 @@
+/* Estilo general de la página */
+body {
+    background-color: #121212; /* Fondo oscuro suave */
+    font-family: 'Roboto', sans-serif; /* Tipografía moderna y limpia */
+    color: #fafafa; /* Texto claro para buen contraste */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Asegura que el body cubra al menos la altura de la pantalla */
+    display: grid;
+    place-items: center; /* Centra el contenido vertical y horizontalmente */
+    width: 100%; /* Ocupa todo el ancho de la pantalla */ 
+    overflow-x: hidden; /* Evita el desplazamiento horizontal si el contenido es demasiado ancho */
+}
+
+/* Contenedor principal */
+.sumativa-container {
+    max-width: 90%; /* Ajusta el ancho máximo del contenedor */
+    width: 100%; /* Inicialmente ocupa todo el ancho disponible */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    padding: 20px; /* Reduce el padding para pantallas más pequeñas */
+    background: linear-gradient(145deg, rgba(24, 24, 24, 0.9), rgba(0, 255, 255, 0.1)); /* Degradado suave */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra suave */
+    text-align: center;
+    backdrop-filter: blur(10px); /* Efecto de desenfoque para dar profundidad */
+    animation: slideIn 1.2s ease-out; /* Animación de deslizamiento */
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .sumativa-container {
+        padding: 15px; /* Reduce aún más el padding */
+    }
+}
+
+/* Animación de entrada suave */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Título principal */
+.title {
+    font-size: 2.5rem; /* Usa unidades rem para escalabilidad */
+    margin-bottom: 1rem; /* Usa unidades rem para escalabilidad */
+    color: #00bcd4; /* Azul futurista */
+    letter-spacing: 1px;
+    text-transform: uppercase; /* Mayúsculas */
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(0, 188, 212, 0.7), 0 0 20px rgba(0, 188, 212, 0.5); /* Sombra sutil */
+    animation: fadeInText 1.5s ease-out; /* Animación de entrada */
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem; /* Reduce el tamaño del título */
+    }
+}
+
+/* Animación de desvanecimiento del título */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Descripción */
+.description {
+    font-size: 1.2rem; /* Usa unidades rem para escalabilidad */
+    color: #e0e0e0;
+    margin-bottom: 2rem; /* Usa unidades rem para escalabilidad */
+    opacity: 0;
+    animation: fadeInDescription 2s ease-out forwards; /* Animación suave de aparición */
+    line-height: 1.6;
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .description {
+        font-size: 1rem; /* Reduce el tamaño de la descripción */
+    }
+}
+
+/* Animación de aparición de la descripción */
+@keyframes fadeInDescription {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://www.transparenttextures.com/patterns/space.png');
+    animation: starsMove 30s linear infinite;
+    pointer-events: none;
+}
+
+/* Movimiento suave del fondo estrellado */
+@keyframes starsMove {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+
